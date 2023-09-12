@@ -1,7 +1,7 @@
 # MWI_TVDE_Microstructure
 Myelin water imaging and tensor-valued diffusion imaging processing code. 
 
-Processing steps as used in the paper: "Painting a more complete picture of brain microstructure using myelin water fraction and microscopic fractional anisotropy".
+Processing steps as used in the paper: "Painting a more complete picture of brain microstructure using myelin water fraction and microscopic fractional anisotropy". Supporting data is available at DOI: 10.5281/zenodo.8339144. 
 
 Requires: 
 - dcm2niix: https://github.com/rordenlab/dcm2niix 
@@ -35,4 +35,4 @@ To create metric atlases using several subjects' data:
 To create z-score maps for a subject based on the metric atlases:
 > ./zscore.sh -p /full/path/to/main/folder -s subject_id
 
-The example_usage/ folder contains a script that can run most processing steps, as well as some data: sample data from one subject, metric atlases, tractography template.
+The example_usage/ folder contains a script that runs most processing steps, and more details on the sample data.

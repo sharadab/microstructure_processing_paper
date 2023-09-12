@@ -15,20 +15,20 @@ This relies on the following file structure to already exist: \
 -- **example_usage.sh script**\
 -- **Metric atlases folder, named "atlas"**\
 -- **Study-specific tract folder, named "group_tractography"**\
--- **subject 1 folder**\
+-- **sample subject folder**\
 ---- PARREC\
 ------ *At least PARRECs of LTE, STE, PTE, Rev b0, 3DT1*\
 ---- CALIPR\
 ------ *CALIPR 56 echoes, MWF map*\
 -- **subject 2 folder** \
+-- **subject 3 folder** \
 etc.
 
 The example_usage.sh file shows how the scripts can be run on sample data. \
-Sample data lives in (link).\
-Please download and put into this file structure to be able to run this script on the sample data.
-The link includes a full set of data from one healthy participant, along with
-metric atlases made with 15 participants, and study-specific tract atlases 
-made with 12 participants. \
+Sample data lives at DOI: 10.5281/zenodo.8339144. There are 3 zip files: SAMPLE.zip contains a healthy
+particpant's data (fully processed), atlas.zip contains metric atlases and group_tractography.zip
+contains components related to the study-specific tract atlas. \
+Please download, unzip and put into the file structure above to be able to run this script on the sample data.
 In the scripts, you will need to modify some file paths to match your system. Specifically,
 - In example_usage.sh, modify paths at the top of the file showing data storage location
 - In processing/MDD_setup.m, modify the path to the MD-DMRI library
