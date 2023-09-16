@@ -12,9 +12,9 @@
 #List of subjects to process one by one
 declare -a subjectlist=("SAMPLE")
 #Folder where subjects will each have sub-folders
-main_folder="/Users/sharada/Documents/GitHub/MWI_TVDE_Microstructure/example_usage"
+main_folder="/Users/sharada/Documents/GitHub/microstructure_processing_paper/example_usage"
 #Folder where processing scripts live
-script_folder="/Users/sharada/Documents/GitHub/MWI_TVDE_Microstructure/processing"
+script_folder="/Users/sharada/Documents/GitHub/microstructure_processing_paper/processing"
 
 
 
@@ -32,7 +32,7 @@ bash ${script_folder}/tractography_special_subjects.sh -p ${main_folder} -s ${su
 bash ${script_folder}/tractometry.sh -p ${main_folder} -s ${subject}
 
 #We already have a study-specific set of metric atlases for MWF/FA/uFA/CMD, so here is an example of how to use the atlas to create z-score maps.
-#Note: As this subject was part of the atlas, their z-score map is not going to show anything unusual. This step is for MS participants/unusual cases.
-bash ${script_folder}/zscore.sh -p ${main_folder} -s ${subject}
+#Note: Run this for people who were not part of atlas creation, to see how they vary from healthy controls (e.g. people with MS)
+#bash ${script_folder}/zscore.sh -p ${main_folder} -s ${subject}
 
 done 
