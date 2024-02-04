@@ -1,7 +1,7 @@
 # MWI_TVDE_Microstructure
 Myelin water imaging and tensor-valued diffusion imaging processing code. 
 
-Processing steps as used in the paper: "Painting a more complete picture of brain microstructure using myelin water fraction and microscopic fractional anisotropy". Supporting data is available at https://zenodo.org/records/8339144. 
+Processing steps as used in the paper: "Myelin water imaging and tensor-valued diffusion encoding reveal tract-specific pattern differences in healthy and MS white matter". Supporting data is available at https://zenodo.org/records/8339144. 
 
 Requires: 
 - dcm2niix: https://github.com/rordenlab/dcm2niix 
