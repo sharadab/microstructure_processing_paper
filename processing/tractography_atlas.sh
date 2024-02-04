@@ -118,7 +118,7 @@ TractSeg -i ${folder_group_tractography}/peaks_template.nii.gz -o ${folder_group
 ##If Tracking does work, run:
 #Tracking -i peaks_template.nii.gz -o tractseg_output --tracking_format tck --algorithm prob --nr_fibers 5000
 
-#Alternatively, use tckgen-- this generates a bundle for one tract. This is because TractSeg's Tracking didn't work on my computer, and I used a fix from: https://github.com/MIC-DKFZ/TractSeg/issues/154
+#Alternatively, use tckgen-- this generates a bundle for one tract. This is because TractSeg's Tracking had trouble, and I used a fix from: https://github.com/MIC-DKFZ/TractSeg/issues/154
 cd ${folder_group_tractography}/
 mkdir tractseg_output/tracking/ 
 tckgen -algorithm FACT tractseg_output/TOM/CST_left.nii.gz tractseg_output/tracking/CST_left.tck -seed_image tractseg_output/bundle_segmentations/CST_left.nii.gz -include tractseg_output/endings_segmentations/CST_left_e.nii.gz -include tractseg_output/endings_segmentations/CST_left_b.nii.gz -nthreads 6

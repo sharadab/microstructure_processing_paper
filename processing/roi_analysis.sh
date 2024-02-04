@@ -179,9 +179,9 @@ fslmaths ${folder_ants}/MDD/wm_mask.nii.gz -thr 0.9 -bin ${folder_ants}/MDD/wm_m
 cp ${folder_ants}/MDD/wm_mask.nii.gz ${folder_rois}/MDD/wm_mask.nii.gz
 
 #Warp CSF to TVDE space for tract profiling purposes.
-AntsApplyTransforms -d 3 -e 0 -i ${folder_ants}/3DT1/csf_mask.nii.gz -r ${folder_ants}/MDD/FWF_mc_b0.nii.gz -t ${folder_ants}/MDD_3DT1/1Warp.nii.gz -t ${folder_ants}/MDD_3DT1/0GenericAffine.mat -o ${folder_ants}/MDD/csf_mask.nii.gz
+antsApplyTransforms -d 3 -e 0 -i ${folder_ants}/3DT1/csf_mask.nii.gz -r ${folder_ants}/MDD/FWF_mc_b0.nii.gz -t ${folder_ants}/MDD_3DT1/1Warp.nii.gz -t ${folder_ants}/MDD_3DT1/0GenericAffine.mat -o ${folder_ants}/MDD/csf_mask.nii.gz
 fslmaths ${folder_ants}/MDD/csf_mask.nii.gz -thr 0.99 -bin ${folder_ants}/MDD/csf_mask.nii.gz
-Invert it so non-CSF is 1 and CSF is 0, for use in profiling.
+#Invert it so non-CSF is 1 and CSF is 0, for use in profiling.
 fslmaths ${folder_ants}/MDD/csf_mask.nii.gz -mul -1 -add 1 ${folder_ants}/MDD/csf_mask.nii.gz
 
 

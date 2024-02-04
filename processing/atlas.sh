@@ -64,7 +64,7 @@ for i in "${subject[@]}"; do
 echo ${j}
 #CALIPR first. 
 #Concatenate warps to do CALIPR -> template
-antsApplyTransforms -d 3 -o [${i}/ants/CALIPR/concatenated_caliprtoatlas_warp.nii.gz,1] -t ${folder_atlas}/template_${i}_T1${j}Warp.nii.gz -t ${folder_atlas}/template_${i}_T1${j}Affine.txt -t ${i}/ants/CALIPR_3DT1/1InverseWarp.nii.gz -t [${i}/ants/CALIPR_3DT1/0GenericAffine.mat,1] -r ${folder_atlas}/template_template0.nii.gz -v
+antsApplyTransforms -d 3 -o [${i}/ants/CALIPR/concatenated_caliprtoatlas_warp.nii.gz,1] -t ${folder_atlas}/template_${i}${j}Warp.nii.gz -t ${folder_atlas}/template_${i}${j}Affine.txt -t ${i}/ants/CALIPR_3DT1/1InverseWarp.nii.gz -t [${i}/ants/CALIPR_3DT1/SyN/0GenericAffine.mat,1] -r ${folder_atlas}/template_template0.nii.gz -v
 #Test it on E1 of CALIPR
 antsApplyTransforms -d 3 -i ${i}/ants/CALIPR/${i}_E1.nii.gz -t ${i}/ants/CALIPR/concatenated_caliprtoatlas_warp.nii.gz -r ${folder_atlas}/template_template0.nii.gz -o ${i}/ants/CALIPR/e1_atlas_space.nii.gz -v
 #Also warp MWF (to make an MWF atlas eventually).
@@ -72,7 +72,7 @@ antsApplyTransforms -d 3 -i ${i}/ants/CALIPR/MWF_brain.nii.gz -t ${i}/ants/CALIP
 
 #Next do MDD metric maps
 #Concatenate warps to do MDD -> template
-antsApplyTransforms -d 3 -o [${i}/ants/MDD/concatenated_mddtoatlas_warp.nii.gz,1] -t ${folder_atlas}/template_${i}_T1${j}Warp.nii.gz -t ${folder_atlas}/template_${i}_T1${j}Affine.txt -t ${i}/ants/MDD_3DT1/1InverseWarp.nii.gz -t [${i}/ants/MDD_3DT1/0GenericAffine.mat,1] -r ${folder_atlas}/template_template0.nii.gz -v
+antsApplyTransforms -d 3 -o [${i}/ants/MDD/concatenated_mddtoatlas_warp.nii.gz,1] -t ${folder_atlas}/template_${i}${j}Warp.nii.gz -t ${folder_atlas}/template_${i}${j}Affine.txt -t ${i}/ants/MDD_3DT1/1InverseWarp.nii.gz -t [${i}/ants/MDD_3DT1/0GenericAffine.mat,1] -r ${folder_atlas}/template_template0.nii.gz -v
 #Apply to the b0 image to test it out
 antsApplyTransforms -d 3 -i ${i}/ants/MDD/FWF_mc_b0.nii.gz -t ${i}/ants/MDD/concatenated_mddtoatlas_warp.nii.gz -r ${folder_atlas}/template_template0.nii.gz -o ${i}/ants/MDD/b0_atlas_space.nii.gz -v
 #Apply to all metric maps of interest
